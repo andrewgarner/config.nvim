@@ -1,0 +1,12 @@
+skip_output: true
+
+pre-commit:
+  commands:
+    nix-fmt:
+      glob: "*.nix"
+      run: nix fmt {staged_files}
+      stage_fixed: true
+    stylua:
+      glob: "*.lua"
+      run: stylua {staged_files}
+      stage_fixed: true
